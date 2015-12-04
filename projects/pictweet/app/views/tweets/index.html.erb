@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pictweet</title>
+</head>
+<body>
+<!-- <%= @tweet %> -->
+<!-- 変数をビューないで使用 helper -->
+
+<div class="contents row">
+<%= render @tweets %>
+<!-- tweetsについて renderとしてつないだ_tweet.html.erbファイルの処理を繰り返して施せる -->
+</div>
+
+<%= paginate (@tweets) %>
+
+
+</body>
+</html>

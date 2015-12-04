@@ -1,0 +1,8 @@
+edit
+
+= form_for :school, url: school_path(@school.id), method: :put do |f|
+  %p
+    = f.label :School_Name
+    = f.text_field :name
+  %p
+    = f.submit

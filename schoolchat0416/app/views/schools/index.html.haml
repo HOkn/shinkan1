@@ -1,0 +1,20 @@
+%h1
+  Schools#index
+%p
+  Find me in app/views/schools/index.html.haml
+
+- @school.each do |s|
+  = s.id
+  = s.name
+  = link_to '学校ページへ', school_path(s)
+  = link_to '編集', edit_school_path(s)
+  = link_to '削除', school_path(s), method: :delete
+
+= form_for :school, url: schools_path do |f|
+  %p
+    = f.label :School_Name
+    = f.text_field :name
+  %p
+    = f.submit
+
+= link_to 'Back', schools_path

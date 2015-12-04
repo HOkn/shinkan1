@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  skype_id: MyString
+  payto: MyText
+
+two:
+  user_id: 
+  skype_id: MyString
+  payto: MyText

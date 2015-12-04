@@ -1,0 +1,43 @@
+%h1 Listing questions
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Content
+      %th Text,
+      %th Askeduser
+      %th String,
+      %th Keyword1
+      %th Text
+      %th Keyword2
+      %th Text
+      %th Keyword3
+      %th Text,
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.title
+        %td= question.content
+        %td= question.text,
+        %td= question.askeduser
+        %td= question.string,
+        %td= question.keyword1
+        %td= question.text
+        %td= question.keyword2
+        %td= question.text
+        %td= question.keyword3
+        %td= question.text,
+        %td= question.user_id
+        %td= link_to 'Show', question
+        %td= link_to 'Edit', edit_question_path(question)
+        %td= link_to 'Destroy', question, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Question', new_question_path

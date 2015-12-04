@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  content: MyString
+  text,: MyString
+  askeduser: MyString
+  string,: MyString
+  keyword1: MyString
+  text: MyString
+  keyword2: MyString
+  text: MyString
+  keyword3: MyString
+  text,: MyString
+  user_id: 1
+
+two:
+  title: 
+  content: MyString
+  text,: MyString
+  askeduser: MyString
+  string,: MyString
+  keyword1: MyString
+  text: MyString
+  keyword2: MyString
+  text: MyString
+  keyword3: MyString
+  text,: MyString
+  user_id: 1

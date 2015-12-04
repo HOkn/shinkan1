@@ -1,0 +1,62 @@
+= render 'header'
+
+/ ROW
+.row
+  .col-md-1
+  .col-md-8
+    .content_wrap
+      .content
+        .question
+          #question_title
+            = @question.title
+          #question_info
+            = @question.created_at
+          #question_content
+            = @question.content
+          = link_to "編集", edit_question_path(@question), :class => "a edit btn btn-primary float_right"
+          / ここはいいね！booleanを置くところ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          %a.btn.btn-primary.float_right{:href => "#", :type => "button"}
+            %i.fa.fa-thumbs-o-up
+            %span.badge 4
+          / ここまではいいね！を置くところ
+
+
+          .box_button
+            = link_to "回答する", :class => "a btn btn-default", :role => "button"
+
+
+        .answer
+          #answer_info 回答者：GreenSkl    回答日時：2015/03/04  11:15
+          #answer_content
+            はじめまして、haruokaさん。IBDP卒業生の、GreenSklです。
+            私の通った学校では、一般的に、みんなは先生の分かりやすさや、
+            またとくに、日本語が母語の場合は、
+            たいてい日本語A文学 HL、英語B HL、生物学を取る傾向がありました。
+            %a.edit.btn.btn-primary.float_right{:href => "", :type => "button"}
+              編集
+            %a.btn.btn-primary.float_right{:href => "#", :type => "button"}
+              %i.fa.fa-thumbs-o-up
+              %span.badge 3
+
+
+          %h2 答える
+          = form_for @answer do |f|
+            %p
+              = f.text_area :content
+            %p
+              .box_button
+                = f.submit '回答する', :class => "a btn btn-default"
+
+                .space10px
+                .space10px
+
+
+      / ここに関連するキーワードを入れる
+
+      = render 'bottombox'
+  / CONTENT end
+
+  .sidebar.col-md-3
+    = render 'sidebar'
+
+= render 'footer'

@@ -1,0 +1,46 @@
+= form_for @question do |f|
+  - if @question.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
+      %ul
+        - @question.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_field :content
+  .field
+    = f.label :text,
+    = f.text_field :text,
+  .field
+    = f.label :askeduser
+    = f.text_field :askeduser
+  .field
+    = f.label :string,
+    = f.text_field :string,
+  .field
+    = f.label :keyword1
+    = f.text_field :keyword1
+  .field
+    = f.label :text
+    = f.text_field :text
+  .field
+    = f.label :keyword2
+    = f.text_field :keyword2
+  .field
+    = f.label :text
+    = f.text_field :text
+  .field
+    = f.label :keyword3
+    = f.text_field :keyword3
+  .field
+    = f.label :text,
+    = f.text_field :text,
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,39 @@
+= render 'header'
+
+/ ROW
+.row
+  .col-md-1
+  .col-md-8
+    .content_wrap
+      .content
+        .question
+          #question_title
+            = @question.title
+          #question_info
+            = @question.created_at
+          #question_content
+            = @question.content
+          = link_to "編集", edit_question_path(@question), :class => "a edit btn btn-primary float_right"
+          / ここはいいね！booleanを置くところ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          %a.btn.btn-primary.float_right{:href => "#", :type => "button"}
+            %i.fa.fa-thumbs-o-up
+            %span.badge 4
+          / ここまではいいね！を置くところ
+
+
+          .box_button
+            = link_to "回答する", :class => "a btn btn-default", :role => "button"
+
+            .space10px
+            .space10px
+
+
+      / ここに関連するキーワードを入れる
+
+      = render 'bottombox'
+  / CONTENT end
+
+  .sidebar.col-md-3
+    = render 'sidebar'
+
+= render 'footer'
